@@ -2,10 +2,8 @@
   "name": "eva-title",
   "version": "1.0.0",
   "description": "EVA标题生成器",
-  "main": "index.html",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "main": "html/index.html",
+  "scripts": {},
   "author": "itorr",
   "license": "ISC",
   "dependencies": {

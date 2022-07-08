@@ -1,7 +1,7 @@
 
 
 const isChrome = /Chrome/.test(navigator.userAgent);
-// const ios = /iphone|ipad|ipod|ios/i.test(navigator.userAgent);
+const ios = /iphone|ipad|ipod|ios/i.test(navigator.userAgent);
 // const isMobile = document.body.offsetWidth < 700;
 // const whiteColor = '#e8e8e8'
 const whiteColor = '#e4e0e8'
@@ -114,10 +114,16 @@ const make = ({
 
     let renderScale = window.devicePixelRatio || 1;
 
+    // override renderScale https://github.com/itorr/eva-title/pull/9
+    const shouldScaleOverride = [type95, ios]
+    if(shouldScaleOverride.some(Boolean)){
+        renderScale = 1;
+    }
+
     if(type95){
-        renderScale = 1
         convolute = true;
     }
+
     // const defaultHeight = 960;
     const defaultWidth  = outputWidth  * renderScale;
     const defaultHeight = outputHeight * renderScale;
